@@ -28,8 +28,6 @@ nav:
   - Introducción a git: introduccion-git.md
   - Instalación y configuración de git: instalacion-git.md
   - Uso básico: uso-basico.md
-<<<<<<< HEAD
   - Uso avanzado: uso-avanzado.md
-=======
+  - Ramas: ramas.md
   - Github: github.md
->>>>>>> ef87863fe2e97d4acb74c54c05ce669b13a4adf6
