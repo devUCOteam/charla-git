@@ -1,0 +1,27 @@
+site_name: Taller de git
+site_author: '@cyberh99 @ironsenior @riera90'
+site_description: 'Curso básico de git'
+site_favicon: '/images/logoasl.png'
+repo_name: 'devUCOteam/charla-git'
+repo_url: 'https://github.com/devUCOteam/charla-git.git'
+
+theme:
+  name: 'material'
+  language: 'es'
+
+extra:
+  palette:
+    primary: 'green'
+    accent: 'light green'
+  social:
+    - type: 'github'
+      link: 'https://github.com/aulasoftwarelibre'
+    - type: 'twitter'
+      link: 'https://twitter.com/aulasl'
+    - type: 'facebook'
+      link: 'https://facebook.com/aulasl'
+  feature:
+tabs: true
+
+nav:
+  - Inicio: index.md
