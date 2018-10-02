@@ -6,7 +6,7 @@ Esta documentación esta basada en la desarrolla en otros años disponible en el
 Documentación desarrollada por:
 
 * José Marquez Doblas [@ironsenior](https://github.com/ironsenior)
-* Diego Rodrígiez Riera [@riera90](https://github.com/riera90)
+* Diego Rodríguez Riera [@riera90](https://github.com/riera90)
 * Héctor Romero López [@cyberh99](https://github.com/cyberh99) 
 
 
