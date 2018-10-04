@@ -1,104 +1,61 @@
-# Ramas
-## ¿Qué son las ramas?
-Es la forma para separar la lı́nea actual de desarrollo con respecto a la principal. Normalmente representan versiones del software que posteriormente son integradas a la lı́nea principal.
+# Ramas o Branches
 
-![branches](img/branches.png)  
+Su utilización está muy extendida ya que permite un mejor control del código, especialmente cuando su evolución se produce en paralelo.
 
-## ¿Cómo me puedo aprovechar de ellas?
-Cuando vamos a trabajar en una nueva funcionalidad, es conveniente hacerlo en una nueva rama, para no modificar la rama principal y dejarla inestable.
+Uno de sus usos más comunes es representar las diferentes versiones del software.
 
-### preparacion del ejemplo.
-Para poder llevar a acabo el ejemplo, haremos, (en un directorio vacío) lo siguiente:  
+### Ver listado de ramas
+`git branch`
 
-	git init && touch .gitignore && git add * && git commit -m "initial commit"
+### Crear una rama
+`git branch nombre_rama`
 
-### Vamos a crear una rama.
+ Git es consciente de la rama en la que nos encontramos en cada momento debido a la existencia de un apuntador especial denominado HEAD que apunta a la rama en la que nos encontramos.
 
-!!! info
-	Si usamos git branch sin ningún argumento, nos devolverá la lista de ramas disponibles.
+### Cambiar a una rama
+`git checkout nombre_rama`
 
-Una vez hemos comprobado que no existe una rama 'test' podemos proceder a su creación.
+ A través de este comando, el apuntador HEAD mencionado anteriormente pasa a apuntar a la rama 'nombre_rama'.
 
-	$ git chechout -b hola
-	Switched to branch 'hola'
+### Comparar ramas
+`git diff nombre_rama1..nombre_rama2`
 
-<!-- TODO: match the previous file and modify it -->
+>Para listar los archivos que han cambiado se puede utilizar `git diff --name-status nombre_rama1..nombre_rama2`
 
-### Modificamos la nueva rama.
-para esto añadiremos un simple hola mundo en SH, creamos un documento nuevo, llamado "HelloWorld.sh" en el cual escribiremos:
+### Renombrar ramas
+`git branch -m nombre_antiguo nombre_nuevo`
 
-	#!/bin/sh
-	printf "hello, world\n"
+### Eliminar ramas
+~~~
+git branch -d nombre_rama
+git branch -D nombre_rama
+~~~
+>El primero de estos 2 comandos dará un error si la rama no es idéntica a la rama master. Con el segundo forzamos el borrado.
 
-### Salvamos las modificaciones a la rama.
-	$ git add HelloWorld.sh
-	$ git commit -m "Añadido script hola mundo"
-	[hola daae9ca] Añadido script hola mundo
-	1 file changed, 3 insertions(+)
-	create mode 100644 HelloWorld.sh
+### Ver si una rama es igual que la rama en la que nos encontramos
+`git branch --merged`
 
-### Merge al master.
-Una vez provado el nuevo cambio, vemos que no da errores, entonces decidimos implementarlo al master, para ello, nos iremos al master:
+### Integrar una rama a la acutal
+`git branch merge rama_a_integrar`
 
-	$ git checkout master
+Con la ejecución de este comando, suelen producirse conflictos con los archivos de ambas ramas. Estos conflictos suelen resolverse manualmente realizando commmits con el mensaje "merge"
 
-y haremos mergin desde la rama hola, a la rama master.
+## Cambios temporales
 
-	$ git merge hola
-	Updating daae9ca..787590a
-	Fast-forward
-	HelloWorld.sh | 2 +-
-	1 file changed, 1 insertion(+), 1 deletion(-)
+### Almacenar cambios temporales
+`git stash save "Mensaje"`
 
-### mergin
+### Listar cambios
+`git stash --list`
 
-A continuación forzaremos una situacion de conflicto entre ramas, para ello modificaremos el script en las dos ramas a la vez.  
+### Ver contenido de un cambio
+`git stash show -p nombre_stash`
 
-en la rama master, editaremos el script añadiendo una exclamación al final del printf.
+### Eliminar un cambio
+`git stash drop nombre_stash`
 
-	#!/bin/sh
-	printf "hello, world!\n"
-
-A continuacion haremos un commit de lo modificado
-
-	$ git commit -am "added \!"
-
-
-en la rama hola, añadiremos una interrogación, para ello, nos cambiamos a la rama hola:
-
-	$ git checkout hola
-
-y editamos el script:
-
-	#!/bin/sh
-	printf "hello, world?\n"
-
-A continuacion haremos un commit de lo modificado
-
-	$ git commit -am "added ?"
-
-
-ahora volveremos a la rama master e intentaremos hacer mergin.
-
-	$ git merge hola
-	Auto-merging HelloWorld.sh
-	CONFLICT (content): Merge conflict in HelloWorld.sh
-	Automatic merge failed; fix conflicts and then commit the result.
-
-Esto indica que el mergin fallo en le archivo HelloWorld.sh y que debemos arreglarlo a mano, para ello, abriremos el script de nuevo, esta vez observaremos que unas marcas se han añadido:
-
-	#!/bin/sh
-	<<<<<<< HEAD
-	printf "hello, world!\n"
-	=======
-	printf "hello, world?\n"
-	>>>>>>> hola
-
-
-Estas marcas lo que indican el trozo de código que ha entrado en conflicto, para arreglarlo eliminaremos uno u otro, y procederemos a hacer commit de lo realizado, para este problema, escogeremos el contenido de la rama hola.
-
-	#!/bin/sh
-	printf "hello, world?\n"
-
-
-	$ git commit -am "fixed mergin problem with branch \"hola\""
+### Aplicar cambio del stash
+~~~
+git stash apply nombre_stash
+git stash pop nombre nombre_stash
+~~~
