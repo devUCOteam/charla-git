@@ -13,11 +13,10 @@ manuales libres que pueden encontrarse en la sección de [Referencias](referenci
   * Inicio
   * Introducción a Git
   * Instalación y configuración de git
-  * Aspectos básicos de Git
   * Uso básico
   * Uso avanzado
   * Ramas
-  * Administración de repositorios
-  * Flujo de trabajo con Git (git flow)
+  * Entornos gráficos 
   * Github
+  * Flujo de trabajo con Git (git flow)
   * Referencias

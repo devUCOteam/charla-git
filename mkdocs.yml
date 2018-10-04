@@ -32,4 +32,5 @@ nav:
   - Ramas: ramas.md
   - Entornos gráficos: EntornoGrafico.md
   - Github: github.md
+  - Flujo de trabajo con Github: git-flow-md
   - Referencias: referencias.md
