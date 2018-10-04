@@ -1,0 +1,872 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Curso básico de git">
+      
+      
+      
+        <meta name="author" content="@cyberh99 @ironsenior @riera90">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copiar al portapapeles">
+      
+        <meta name="lang:clipboard.copied" content="Copiado al portapapeles">
+      
+        <meta name="lang:search.language" content="es">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No se encontraron documentos">
+      
+        <meta name="lang:search.result.one" content="1 documento encontrado">
+      
+        <meta name="lang:search.result.other" content="# documentos encontrados">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Github - Taller de git</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#github" tabindex="1" class="md-skip">
+        Saltar a contenido
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Taller de git" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Taller de git
+              </span>
+              <span class="md-header-nav__topic">
+                Github
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Teclee para comenzar búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/devUCOteam/charla-git.git/" title="Ir al repositorio" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      devUCOteam/charla-git
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Taller de git" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Taller de git
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/devUCOteam/charla-git.git/" title="Ir al repositorio" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      devUCOteam/charla-git
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../introduccion-git/" title="Introducción a git" class="md-nav__link">
+      Introducción a git
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../instalacion-git/" title="Instalación y configuración de git" class="md-nav__link">
+      Instalación y configuración de git
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../uso-basico/" title="Uso básico" class="md-nav__link">
+      Uso básico
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../uso-avanzado/" title="Uso avanzado" class="md-nav__link">
+      Uso avanzado
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ramas/" title="Ramas" class="md-nav__link">
+      Ramas
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Github
+      </label>
+    
+    <a href="./" title="Github" class="md-nav__link md-nav__link--active">
+      Github
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Tabla de contenidos</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-github" title="¿Qué es github?" class="md-nav__link">
+    ¿Qué es github?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sincronizacion-de-github-y-git" title="Sincronización de Github y Git" class="md-nav__link">
+    Sincronización de Github y Git
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-http" title="Autenticación HTTP" class="md-nav__link">
+    Autenticación HTTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-con-ssh" title="Autenticación con SSH" class="md-nav__link">
+    Autenticación con SSH
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-un-repositorio-en-remoto" title="Convertir un repositorio en remoto" class="md-nav__link">
+    Convertir un repositorio en remoto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clonar-un-repositorio" title="Clonar un repositorio" class="md-nav__link">
+    Clonar un repositorio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ver-repostorios-remotos" title="Ver repostorios remotos" class="md-nav__link">
+    Ver repostorios remotos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obteniendo-y-aplicando-datos-en-un-repositorio-remoto" title="Obteniendo y aplicando datos en un repositorio remoto" class="md-nav__link">
+    Obteniendo y aplicando datos en un repositorio remoto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trabajando-con-ramas-remotas" title="Trabajando con ramas remotas" class="md-nav__link">
+    Trabajando con ramas remotas
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-con-ramas-remotas" title="Operaciones con ramas remotas" class="md-nav__link">
+    Operaciones con ramas remotas
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-y-modficiar-ramas-remota" title="Crear y modficiar ramas remota" class="md-nav__link">
+    Crear y modficiar ramas remota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-ramas-remotas" title="Eliminar ramas remotas" class="md-nav__link">
+    Eliminar ramas remotas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtener-datos-de-ramas-remotas" title="Obtener datos de ramas remotas" class="md-nav__link">
+    Obtener datos de ramas remotas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trabajo-dinamico-con-repositorio-remotos" title="Trabajo dinámico con repositorio remotos" class="md-nav__link">
+    Trabajo dinámico con repositorio remotos
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../EntornoGrafico/" title="Entornos gráficos" class="md-nav__link">
+      Entornos gráficos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../git-flow/" title="Git Flow" class="md-nav__link">
+      Git Flow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../referencias/" title="Referencias" class="md-nav__link">
+      Referencias
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Tabla de contenidos</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-github" title="¿Qué es github?" class="md-nav__link">
+    ¿Qué es github?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sincronizacion-de-github-y-git" title="Sincronización de Github y Git" class="md-nav__link">
+    Sincronización de Github y Git
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-http" title="Autenticación HTTP" class="md-nav__link">
+    Autenticación HTTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-con-ssh" title="Autenticación con SSH" class="md-nav__link">
+    Autenticación con SSH
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-un-repositorio-en-remoto" title="Convertir un repositorio en remoto" class="md-nav__link">
+    Convertir un repositorio en remoto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clonar-un-repositorio" title="Clonar un repositorio" class="md-nav__link">
+    Clonar un repositorio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ver-repostorios-remotos" title="Ver repostorios remotos" class="md-nav__link">
+    Ver repostorios remotos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obteniendo-y-aplicando-datos-en-un-repositorio-remoto" title="Obteniendo y aplicando datos en un repositorio remoto" class="md-nav__link">
+    Obteniendo y aplicando datos en un repositorio remoto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trabajando-con-ramas-remotas" title="Trabajando con ramas remotas" class="md-nav__link">
+    Trabajando con ramas remotas
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-con-ramas-remotas" title="Operaciones con ramas remotas" class="md-nav__link">
+    Operaciones con ramas remotas
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-y-modficiar-ramas-remota" title="Crear y modficiar ramas remota" class="md-nav__link">
+    Crear y modficiar ramas remota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-ramas-remotas" title="Eliminar ramas remotas" class="md-nav__link">
+    Eliminar ramas remotas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtener-datos-de-ramas-remotas" title="Obtener datos de ramas remotas" class="md-nav__link">
+    Obtener datos de ramas remotas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trabajo-dinamico-con-repositorio-remotos" title="Trabajo dinámico con repositorio remotos" class="md-nav__link">
+    Trabajo dinámico con repositorio remotos
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/devUCOteam/charla-git.git/edit/master/docs/github.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="github">Github</h1>
+<h2 id="que-es-github">¿Qué es github?</h2>
+<p>Git es un control de versiones que nos permite trabajar comodamente con múltiples versiones de nuestro código, sin embargo, cuando estamos trabajando en el mundo normal, lo general es estar colaborando con otras personas en el mismo proycto. Esta funcionalidad se realiza de forma más cómoda mediante Github.</p>
+<p><strong>Github es un proyecto independiente a git</strong></p>
+<p>Debemos tener clara la anterior afirmación, puesto que Github simplemente es un repositorio donde podemos encontrar múltiples proyectos cuyo control de versiones es <em>git</em>, es una plataforma muy útil de usar para la comunicación entre los diferentes equipos.</p>
+<p>Antes de continuar será neceseario obtener nuestra cuenta de <a href="https://www.github.com">Github</a></p>
+<p align="center"><img src="https://solanch96.files.wordpress.com/2017/06/github.gif?w=500&h=236&crop=1"></p>
+
+<h2 id="sincronizacion-de-github-y-git">Sincronización de Github y Git</h2>
+<p>Cuando estamos trabajando con git estamos haciendo repositorios locales, dichos repositorios estan alojados en nuestro equipo aislados del resto del mundo. Al querer trabajar con Github, será necesario sincronizar los cambios que hagamos en local con los cambios en remoto (dentro de nuestro repositorio Github) para ello tenemos dos opciones de trabajar:</p>
+<ul>
+<li>Autenticación mediante HTTP</li>
+<li>Utilizar claves SSH</li>
+</ul>
+<h3 id="autenticacion-http">Autenticación HTTP</h3>
+<p>Consiste en introducir nuestro usuario y contraseña en el caso de que queramos realizar operaciones en remoto ( como pueden ser obtener los cambios o subir nuevos cambios), para ello simplemente tenemos que configurar nuestra cuenta de Github.</p>
+<p>En el caso de estar trabajando con claves HTTP, para ahorrar tiempo podemos introducir la contraseña en caché de forma que no la requiera cada vez que tengamos que realizar operaciones remotas, para ello es necesario activar la caché mediante el siguiente comando:</p>
+<pre><code>    git config --global credential.helper 'cache --timeout=3600'
+</code></pre>
+
+<h3 id="autenticacion-con-ssh">Autenticación con SSH</h3>
+<p>Github tiene una opción muy útil que consiste en poder sincronizar las claves <a href="https://en.wikipedia.org/wiki/Ssh">ssh</a> con Github de forma que podamos realizar cambios sin necesidad de introducir nuestro usuario y contraseña de Github.</p>
+<p>Si queremos configurar nuestra clave ssh dentro del repositorio de Github, necesitaremos generarla, para ello introduciremos el siguiente comando en la terminal.</p>
+<p><code>ssh-keygen -b 4096</code></p>
+<p>De forma que por defecto (aunque podemos cambiarlo dentro del asistente de generación) se guardarán los archivos <strong>id_rsa</strong> y <strong>id_rsa.pub</strong> dentro de la carpeta <strong>~/.ssh</strong> de nuestro usuario, pudiendo así copiar el contenido del <strong>último archivo</strong> a la configuración de nuestro perfil de Github:</p>
+<p align="center"><img src="https://jdblischak.github.io/2014-09-18-chicago/novice/git/img/github-ssh-keys.png"> </p>
+
+<h2 id="convertir-un-repositorio-en-remoto">Convertir un repositorio en remoto</h2>
+<p>Como se ha mencionado con anterioridad, cuando estamos trabajando con git lo estamos haciendo de forma local, sin embargo cuando queremos sincronizar dichos cambios con Github, simplemente tenemos que indicarle a git a que repositorio de git tiene que enviarlo, para ello tenemos que ejecutar el siguiente comando:</p>
+<pre><code>    git  remote  add  origin  url
+</code></pre>
+
+<p><strong>Tenemos que tener en cuenta que la url, será http si estamos trabajando con este método de autenticación o ssh en el caso de tener configurada la clave pública, ambas opciones nos la facilita Github cuando creamos un nuevo repositorio</strong></p>
+<h2 id="clonar-un-repositorio">Clonar un repositorio</h2>
+<p>Al hablar de Github mencionamos que existían múltiples repositorios creados por numerosas personas, todos usando el <em>git</em> como control de versiones. <em>¿Qué pasa si quiero obtener el repositorio de una persona?</em> Esta pregunta muy frecuente podemos solucionarla con la opción <em>clone</em> de git.</p>
+<p>Esta opción nos permite obtener le repositorio (con todos los cambios que se han realizado) sobre cualquier proyecto <strong>público</strong> de Github. Un aspecto a tener en cuenta es que esta operación es que si constamos como colaborador en dicho proyecto podemos realizar todas las operaciones (puesto que se obtienen la configuración del mismo)</p>
+<p>Para clonar un repositorio cualquiera simplemente tenemos que ejecutar:</p>
+<pre><code>    git clone url
+</code></pre>
+
+<h2 id="ver-repostorios-remotos">Ver repostorios remotos</h2>
+<p>Cuando estamos trabajando en un proyecto, generalmente subimos todos los cambios a un solo repositorio de Github, sin embargo, es posible que estemos trabajando en diferentes repositorios por diversos motivos. Uno de estos motivos puede ser que estemos obteniendo el código de un repositorio determinado y subiendo nuestros cambios a uno propio.</p>
+<p>Para poder llevar el control de los repositorio remotos asociados a nuestro repositorio local, utilizamos el siguiente comando:</p>
+<pre><code>    git remote -v
+</code></pre>
+
+<p>Si queremos eliminar cualquier repositorio remoto de nuestro repositorio local simplemente podemos borrar el reositiorio haciendo uso del comando</p>
+<pre><code>  git remote rm origin
+</code></pre>
+
+<p align="center"><img src="http://www.cantabriatic.com/wp-content/uploads/2015/07/Github.png"/></p>
+
+<h2 id="obteniendo-y-aplicando-datos-en-un-repositorio-remoto">Obteniendo y aplicando datos en un repositorio remoto</h2>
+<p>Cuando hemos terminado de trabajar en nuestro repositorio local, realizados todos nuestros <em>commits</em> y agregados los archivos pertinentes, pasaremos a aplicar los cambios en el repositorio remoto, para ello usaremos el siguiente comando:</p>
+<pre><code>  git push -u origin master
+</code></pre>
+
+<p>Teniendo en cuenta que <em>origin</em> hará referencia al repositorio remoto con el que estamos trabajando, mientras que <em>master</em> hace referencia a la rama en la que estamos trabajando en nuestro repositorio local.</p>
+<p>Para <strong>obtener los cambios</strong> realizados por nosotros (u otras personas) en el repositorio remoto utilizamos:</p>
+<pre><code>  git pull origin master
+</code></pre>
+
+<p>Haciendo referencia de nuevo a <em>master</em> como la rama en la que queremos obtener los cambios.</p>
+<p><strong>Debemos tener en cuenta que antes de realizar cualquier <em>git push</em> es recomendable hacer un <em>git pull</em> para evitar posibles errores a la hora de subir los cambios al repositorio remoto</strong></p>
+<h2 id="trabajando-con-ramas-remotas">Trabajando con ramas remotas</h2>
+<p>Las ramas (de lo cual se ha hablado con anterioridad), es un elemento de <em>git</em> que puede ser trasladado a <em>Github</em> sin ningún problema. Esto permite a los usuarios trabajar en remoto sin problema alguno. Podemos ver las ramas remotas de nuestro repositorio con:</p>
+<pre><code>  git branch -r
+</code></pre>
+
+<h3 id="operaciones-con-ramas-remotas">Operaciones con ramas remotas</h3>
+<p>Las mismas operaciones (crear,modificar,eliminar) que podíamos hacer con las ramas locales podrémos hacerlas con las remotas sin nigún tipo de problema, simplemente tendrémos que haber creado las ramas remotas previamente y aplicar los diferentes cambios que hagamos en local.</p>
+<h4 id="crear-y-modficiar-ramas-remota">Crear y modficiar ramas remota</h4>
+<p>Para crear una rama remota, tenemos que seguir los siguientes pasos:</p>
+<ol>
+<li>Crear una rama en local</li>
+<li><em>git branch nueva rama</em></li>
+<li>Modificar la rama local</li>
+<li>Hacer commit</li>
+<li>Crear la rama remota</li>
+<li><em>git push origin rama1</em></li>
+</ol>
+<p>De nuevo hacemos referencia a <em>origin</em> como la rama remota y <em>rama1</em> como la <em>rama</em> local en la que estamos trabajando y queremos sincronizar con el repositorio remoto</p>
+<p>Si llevamos cierto tiempo trabajando con una rama en nuestro repositorio local, podemos copiar dicha rama al repositorio remoto usando:</p>
+<pre><code>  git checkout -b rama_local rama_remota
+</code></pre>
+
+<h4 id="eliminar-ramas-remotas">Eliminar ramas remotas</h4>
+<p>Al igual podemos eliminar una rama del repositorio remoto:</p>
+<pre><code>  git push origin --delete rama_remota
+</code></pre>
+
+<h4 id="obtener-datos-de-ramas-remotas">Obtener datos de ramas remotas</h4>
+<p>Una vez que tenemos contenido en ramas locales,sería de utilidad poder traerlo a nuestro repositorio local de forma que podamos explorar y probar las nuevas funcionalidades implementadas por cualquier compañero (como ejemplo personal). Para poder obtener <em>todos los cambios remotos</em> utilizamos el comando:</p>
+<pre><code>git fetch
+</code></pre>
+
+<p>Si estamos trabajando en una rama local y queremos fusionarla con las ramas remotas tendrémos que usar el comando</p>
+<pre><code>  git merge origin/master
+</code></pre>
+
+<p>De forma que estamos sincronizando completamente nuestr rama local <em>master</em> con nuestra rama remota (<em>master en el repositorio remoto</em>), en el caso de que tengamos problemas de sincronización Github tiene los denominados <em>pull merge requests</em> que quedarán registrados como un commit cuando un usuario decide fusionar su rama local con la remota.</p>
+<p>Cuando queremos obtener los cambios <em>en la rama en la que estamos trabajando</em> simplemente tenemos que recurrir al comando visto con anterioridad:</p>
+<pre><code>  git pull
+</code></pre>
+
+<h2 id="trabajo-dinamico-con-repositorio-remotos">Trabajo dinámico con repositorio remotos</h2>
+<p align="center"><img src="https://user-images.githubusercontent.com/9693472/41194624-35b0dc8c-6c3c-11e8-9223-fa1a6f3cb887.png"/></p>
+
+<p>Cuando estamos explorando repositorios remotos, podemos encontrar algún proyecto que te guste modificar o un trabajo que quieras comprobar como funciona. En este caso Github implementa lo denomidado <em>fork</em> que consiste en el clonado de un repositorio remoto (creado por otra persona) a un repositorio remoto (creado por nosotros) de forma que podamos modificar libremente <strong>una copia exacta del repositorio ajeno</strong></p>
+<p>Una vez que hemos copiado el remoto ajeno a uno personal podemos trabajar libremente como mencionamos anteriormente.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ramas/" title="Ramas" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Ramas
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../EntornoGrafico/" title="Entornos gráficos" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Entornos gráficos
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/aulasoftwarelibre" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/aulasl" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://facebook.com/aulasl" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.es.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

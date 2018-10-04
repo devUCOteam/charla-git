@@ -1,0 +1,927 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Curso básico de git">
+      
+      
+      
+        <meta name="author" content="@cyberh99 @ironsenior @riera90">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copiar al portapapeles">
+      
+        <meta name="lang:clipboard.copied" content="Copiado al portapapeles">
+      
+        <meta name="lang:search.language" content="es">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No se encontraron documentos">
+      
+        <meta name="lang:search.result.one" content="1 documento encontrado">
+      
+        <meta name="lang:search.result.other" content="# documentos encontrados">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Uso avanzado - Taller de git</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#uso-avanzado-de-git" tabindex="1" class="md-skip">
+        Saltar a contenido
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Taller de git" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Taller de git
+              </span>
+              <span class="md-header-nav__topic">
+                Uso avanzado
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Teclee para comenzar búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/devUCOteam/charla-git.git/" title="Ir al repositorio" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      devUCOteam/charla-git
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Taller de git" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Taller de git
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/devUCOteam/charla-git.git/" title="Ir al repositorio" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      devUCOteam/charla-git
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Inicio" class="md-nav__link">
+      Inicio
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../introduccion-git/" title="Introducción a git" class="md-nav__link">
+      Introducción a git
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../instalacion-git/" title="Instalación y configuración de git" class="md-nav__link">
+      Instalación y configuración de git
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../uso-basico/" title="Uso básico" class="md-nav__link">
+      Uso básico
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Uso avanzado
+      </label>
+    
+    <a href="./" title="Uso avanzado" class="md-nav__link md-nav__link--active">
+      Uso avanzado
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Tabla de contenidos</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deshacer-cambios" title="Deshacer cambios" class="md-nav__link">
+    Deshacer cambios
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deshaciendo-cambios-antes-de-la-fase-de-staging" title="Deshaciendo cambios antes de la fase de staging." class="md-nav__link">
+    Deshaciendo cambios antes de la fase de staging.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deshaciendo-cambios-antes-del-commit" title="Deshaciendo cambios antes del commit" class="md-nav__link">
+    Deshaciendo cambios antes del commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deshaciendo-commits-no-deseados" title="Deshaciendo commits no deseados." class="md-nav__link">
+    Deshaciendo commits no deseados.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar-commits-de-una-rama" title="Borrar commits de una rama" class="md-nav__link">
+    Borrar commits de una rama
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-un-commit" title="Modificar un commit" class="md-nav__link">
+    Modificar un commit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moviendo-y-borrando-archivos" title="Moviendo y borrando archivos" class="md-nav__link">
+    Moviendo y borrando archivos
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mover-un-archivo-a-otro-directorio-con-git" title="Mover un archivo a otro directorio con git" class="md-nav__link">
+    Mover un archivo a otro directorio con git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mover-y-borrar-archivos" title="Mover y borrar archivos." class="md-nav__link">
+    Mover y borrar archivos.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ramas/" title="Ramas" class="md-nav__link">
+      Ramas
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../github/" title="Github" class="md-nav__link">
+      Github
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../EntornoGrafico/" title="Entornos gráficos" class="md-nav__link">
+      Entornos gráficos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../git-flow/" title="Git Flow" class="md-nav__link">
+      Git Flow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../referencias/" title="Referencias" class="md-nav__link">
+      Referencias
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Tabla de contenidos</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deshacer-cambios" title="Deshacer cambios" class="md-nav__link">
+    Deshacer cambios
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deshaciendo-cambios-antes-de-la-fase-de-staging" title="Deshaciendo cambios antes de la fase de staging." class="md-nav__link">
+    Deshaciendo cambios antes de la fase de staging.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deshaciendo-cambios-antes-del-commit" title="Deshaciendo cambios antes del commit" class="md-nav__link">
+    Deshaciendo cambios antes del commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deshaciendo-commits-no-deseados" title="Deshaciendo commits no deseados." class="md-nav__link">
+    Deshaciendo commits no deseados.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar-commits-de-una-rama" title="Borrar commits de una rama" class="md-nav__link">
+    Borrar commits de una rama
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-un-commit" title="Modificar un commit" class="md-nav__link">
+    Modificar un commit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moviendo-y-borrando-archivos" title="Moviendo y borrando archivos" class="md-nav__link">
+    Moviendo y borrando archivos
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mover-un-archivo-a-otro-directorio-con-git" title="Mover un archivo a otro directorio con git" class="md-nav__link">
+    Mover un archivo a otro directorio con git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mover-y-borrar-archivos" title="Mover y borrar archivos." class="md-nav__link">
+    Mover y borrar archivos.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/devUCOteam/charla-git.git/edit/master/docs/uso-avanzado.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="uso-avanzado-de-git">Uso avanzado de Git</h1>
+<h2 id="deshacer-cambios">Deshacer cambios</h2>
+<h3 id="deshaciendo-cambios-antes-de-la-fase-de-staging">Deshaciendo cambios antes de la fase de staging.</h3>
+<p>Volvemos a la rama máster y vamos a modificar el comentario que pusimos:</p>
+<pre><code>$ git checkout master
+Previous HEAD position was 3283e0d... Se añade un parámetro por defecto
+Switched to branch 'master'
+</code></pre>
+<p>Modificamos <em>hello.cpp</em> de la siguiente manera:</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+
+int main(int argc, char* argv[]){
+  //Me he equivocado en el comentario, pero la funcion hace eso :-)
+  if (argc &lt; 2){
+    std::cout&lt;&lt;&quot;Usage: hello Nombre&quot;&lt;&lt;std::endl;
+  }
+
+  std::cout&lt;&lt;&quot;Hello World &quot;&lt;&lt;argv[1]&lt;&lt;&quot;Bienvenido al curso de git&quot;&lt;&lt;std::endl;
+  return 0;
+}
+
+</code></pre>
+
+<p>Y comprobamos:</p>
+<pre><code>    $ git status
+    En la rama master
+Cambios no rastreados para el commit:
+  (usa &quot;git add &lt;archivo&gt;...&quot; para actualizar lo que será confirmado)
+  (usa &quot;git checkout -- &lt;archivo&gt;...&quot; para descartar los cambios en el directorio de trabajo)
+
+    modificado:     hello.cpp
+
+sin cambios agregados al commit (usa &quot;git add&quot; y/o &quot;git commit -a&quot;)
+</code></pre>
+
+<p>El mismo Git nos indica que debemos hacer para añadir los cambios o para deshacerlos:</p>
+<pre><code>    $ git checkout hola.php
+    $ git status
+    En la rama master
+    nada para hacer commit, el árbol de trabajo esta limpio
+
+    $ cat hola.php
+    #include &lt;iostream&gt;
+
+  int main(int argc, char* argv[]){
+    //Funcion para comprobar los numeros de parametros
+    if (argc &lt; 2){
+      std::cout&lt;&lt;&quot;Usage: hello Nombre&quot;&lt;&lt;std::endl;
+    }
+
+    std::cout&lt;&lt;&quot;Hello World &quot;&lt;&lt;argv[1]&lt;&lt;&quot;Bienvenido al curso de git&quot;&lt;&lt;std::endl;
+    return 0;
+  }
+</code></pre>
+
+<h3 id="deshaciendo-cambios-antes-del-commit">Deshaciendo cambios antes del commit</h3>
+<p>Vamos a hacer lo mismo que la vez anterior, pero esta vez sí añadiremos el cambio al <em>staging</em> (sin hacer <em>commit</em>).
+Así que volvemos a modificar <em>hello.cpp</em> igual que la anterior ocasión:</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+
+int main(int argc, char* argv[]){
+  //Enserio, sigo fallando en comentarios. Help me please :/
+  if (argc &lt; 2){
+    std::cout&lt;&lt;&quot;Usage: hello Nombre&quot;&lt;&lt;std::endl;
+  }
+
+  std::cout&lt;&lt;&quot;Hello World &quot;&lt;&lt;argv[1]&lt;&lt;&quot;Bienvenido al curso de git&quot;&lt;&lt;std::endl;
+  return 0;
+}
+
+</code></pre>
+
+<p>Y lo añadimos al <em>staging</em></p>
+<pre><code>    $ git add hello.cpp
+    $ git status
+    En la rama master
+  Cambios a ser confirmados:
+    (usa &quot;git reset HEAD &lt;archivo&gt;...&quot; para sacar del área de stage)
+
+    modificado:     hello.cpp
+
+</code></pre>
+
+<p>De nuevo, Git nos indica qué debemos hacer para deshacer el cambio:</p>
+<pre><code>    $ git reset HEAD hello.cpp
+    Cambios fuera del área de stage tras el reset:
+    M   hello.cpp
+
+    $ git status
+    En la rama master
+Cambios no rastreados para el commit:
+  (usa &quot;git add &lt;archivo&gt;...&quot; para actualizar lo que será confirmado)
+  (usa &quot;git checkout -- &lt;archivo&gt;...&quot; para descartar los cambios en el directorio de trabajo)
+
+    modificado:     hello.cpp
+
+sin cambios agregados al commit (usa &quot;git add&quot; y/o &quot;git commit -a&quot;)
+
+    $ git checkout hello.cpp
+</code></pre>
+
+<p>Y ya tenemos nuestro repositorio limpio otra vez. Como vemos hay que hacerlo en dos pasos:
+uno para borrar los datos del <em>staging</em> y otro para restaurar la copia de trabajo.</p>
+<h3 id="deshaciendo-commits-no-deseados">Deshaciendo commits no deseados.</h3>
+<p>Si a pesar de todo hemos hecho un commit y nos hemos equivocado, podemos deshacerlo con la orden <code>git revert</code>.
+Modificamos otra vez el archivo como antes:</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+
+int main(int argc, char* argv[]){
+  // 3º vez que fallo en el comentario, me voy a cambiar de carrera
+  if (argc &lt; 2){
+    std::cout&lt;&lt;&quot;Usage: hello Nombre&quot;&lt;&lt;std::endl;
+  }
+
+  std::cout&lt;&lt;&quot;Hello World &quot;&lt;&lt;argv[1]&lt;&lt;&quot;Bienvenido al curso de git&quot;&lt;&lt;std::endl;
+  return 0;
+}
+
+</code></pre>
+
+<p>Pero ahora sí hacemos commit:</p>
+<pre><code>    $ git add hello.cpp
+    $ git commit -m &quot;Fallo en el comentario y lloro&quot;
+    [master 09e9f8b] Fallo en el comentario y lloro
+     1 file changed, 1 insertion(+), 1 deletion(-)
+</code></pre>
+
+<p>Bien, una vez confirmado el cambio, vamos a deshacer el cambio con la orden <code>git revert</code>:</p>
+<pre><code>    $ git revert HEAD --no-edit
+    [master 41f3998] Revert &quot;Fallo en el comentario y lloro&quot;
+    Date: Mon Oct 1 18:20:00 2018 +0200
+    1 file changed, 1 insertion(+), 1 deletion(-)
+    $ git hist
+    * 41f3998 2018-10-01 | Revert &quot;Fallo en el comentario y lloro&quot; (HEAD -&gt; master) [cyberh99]
+    * 09e9f8b 2018-10-01 | Fallo en el comentario y lloro [cyberh99]
+    * 8ca08af 2018-10-01 | Agregamos comentarios [cyberh99]
+    * 506066a 2018-10-01 | Cambiado el mensaje por defecto [cyberh99]
+    * 4a4ad0d 2018-10-01 | Agregados parametros [cyberh99]
+    * 24a4f96 2018-10-01 | comenzamos el proyecto [cyberh99]
+    * afdd3c3 2018-10-01 | initial commit [cyberh99]
+</code></pre>
+
+<h3 id="borrar-commits-de-una-rama">Borrar commits de una rama</h3>
+<p>El anterior apartado revierte un commit, pero deja huella en el historial de cambios. Para hacer que no aparezca hay que usar la orden <code>git reset</code>.</p>
+<pre><code>    $ git reset --hard v1
+    HEAD está ahora en 506066a Cambiado el mensaje por defecto
+    $ git hist
+    * 506066a 2018-10-01 | Cambiado el mensaje por defecto (HEAD -&gt; master) [cyberh99]
+    * 4a4ad0d 2018-10-01 | Agregados parametros [cyberh99]
+    * 24a4f96 2018-10-01 | comenzamos el proyecto [cyberh99]
+    * afdd3c3 2018-10-01 | initial commit [cyberh99]
+</code></pre>
+
+<p>El resto de cambios no se han borrado (aún), simplemente no están accesibles porque git no sabe como referenciarlos. Si sabemos su hash podemos acceder aún a ellos. Pasado un tiempo, eventualmente Git tiene un recolector de basura que los borrará. Se puede evitar etiquetando el estado final.</p>
+<p>!!! danger
+    La orden <em>reset</em> es una operación delicada. Debe evitarse si no se sabe bien lo que se está haciendo,
+    sobre todo cuando se trabaja en repositorios compartidos, porque podríamos alterar la historia de cambios
+    lo cual puede provocar problemas de sincronización.</p>
+<h3 id="modificar-un-commit">Modificar un commit</h3>
+<p>Esto se usa cuando hemos olvidado añadir un cambio a un commit que acabamos de realizar. Tenemos
+nuestro archivo <em>hello.cpp</em> de la siguiente manera:</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+
+//Coded by god
+//or by @cyberh99 who knows?
+int main(int argc, char* argv[]){
+  if (argc &lt; 2){
+    std::cout&lt;&lt;&quot;Usage: hello Nombre&quot;&lt;&lt;std::endl;
+  }
+
+  std::cout&lt;&lt;&quot;Hello World &quot;&lt;&lt;argv[1]&lt;&lt;&quot;Bienvenido al curso de git&quot;&lt;&lt;std::endl;
+  return 0;
+}
+
+</code></pre>
+
+<p>Y lo confirmamos:</p>
+<pre><code>    $ git commit -a -m &quot;Añadido el autor del programa&quot;
+    [master c9a1ea1] Agregados comentarios súper útiles
+   1 file changed, 3 insertions(+)
+</code></pre>
+
+<p><strong>tip</strong>
+    El parámetro <code>-a</code> hace un <code>git add</code> antes de hacer <em>commit</em> de todos los archivos modificados
+     o borrados (de los nuevos no), con lo que nos ahorramos un paso.</p>
+<p>Ahora nos percatamos que se nos ha olvidado poner el correo electrónico. Así que volvemos a modificar nuestro archivo:</p>
+<pre><code class="c++">#include &lt;iostream&gt;
+
+//Coded by god
+//or by @cyberh99 who knows?
+//okay... it's @cyberh99
+int main(int argc, char* argv[]){
+  if (argc &lt; 2){
+    std::cout&lt;&lt;&quot;Usage: hello Nombre&quot;&lt;&lt;std::endl;
+  }
+
+  std::cout&lt;&lt;&quot;Hello World &quot;&lt;&lt;argv[1]&lt;&lt;&quot;Bienvenido al curso de git&quot;&lt;&lt;std::endl;
+  return 0;
+}
+
+</code></pre>
+
+<p>Y en esta ocasión usamos <code>commit --amend</code> que nos permite modificar el último estado confirmado, sustituyéndolo por el estado actual:</p>
+<pre><code>    $ git add hola.php
+    $ git commit --amend -m &quot;Añadido el autor del programa y su email&quot;
+    [master 80919aa] Añadido comentario aclarativo
+    Date: Mon Oct 1 18:23:25 2018 +0200
+    1 file changed, 4 insertions(+)
+    $ git hist
+    * 80919aa 2018-10-01 | Añadido comentario aclarativo (HEAD -&gt; master) [cyberh99]
+    * 506066a 2018-10-01 | Cambiado el mensaje por defecto [cyberh99]
+    * 4a4ad0d 2018-10-01 | Agregados parametros [cyberh99]
+    * 24a4f96 2018-10-01 | comenzamos el proyecto [cyberh99]
+    * afdd3c3 2018-10-01 | initial commit [cyberh99]
+</code></pre>
+
+<p><strong>danger</strong>
+    Nunca modifiques un <em>commit</em> que ya hayas sincronizado con otro repositorio o
+    que hayas recibido de él. Estarías alterando la historia de cambios y provocarías
+    problemas de sincronización.</p>
+<h2 id="moviendo-y-borrando-archivos">Moviendo y borrando archivos</h2>
+<h3 id="mover-un-archivo-a-otro-directorio-con-git">Mover un archivo a otro directorio con git</h3>
+<p>Para mover archivos usaremos la orden <code>git mv</code>:</p>
+<pre><code>    $ mkdir src
+    $ git mv hello.cpp src
+    $ git status
+    En la rama master
+  Cambios a ser confirmados:
+    (usa &quot;git reset HEAD &lt;archivo&gt;...&quot; para sacar del área de stage)
+
+    renombrado:     hello.cpp -&gt; src/hello.cpp
+
+</code></pre>
+
+<h3 id="mover-y-borrar-archivos">Mover y borrar archivos.</h3>
+<p>Podíamos haber hecho el paso anterior con la órden del sistema <em>mv</em> y el resultado hubiera sido el mismo. Lo siguiente es a modo de ejemplo y no es necesario que lo ejecutes:</p>
+<pre><code>$ mkdir src
+$ mv hello.cpp src
+$ git add src/hello.cpp
+$ git rm hello.cpp
+</code></pre>
+<p>Y, ahora sí, ya podemos guardar los cambios:</p>
+<pre><code>    $ git commit -m &quot;Movido hola.php a lib.&quot;
+    [master 2bfbc0d] Moivido a src
+   1 file changed, 0 insertions(+), 0 deletions(-)
+   rename hello.cpp =&gt; src/hello.cpp (100%)
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../uso-basico/" title="Uso básico" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Uso básico
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../ramas/" title="Ramas" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Ramas
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/aulasoftwarelibre" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/aulasl" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://facebook.com/aulasl" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.es.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
